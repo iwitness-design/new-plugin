@@ -13,4 +13,12 @@ Now, navigate to the plugin directory in your terminal and run `composer install
 ### Update package.json
 `package.json` is the file where we will store all of our plugin specific meta. This is where you will update the plugin name, description, version number, and more. Check out that file and update all of the relevant information.
 
-Once this is done, run `grunt replace` to update the plugin defaults to use the Title, Description, Version Number, and Textdomain that you supplied.
+### Update main file
+* Update the main plugin file name
+* Update the textdomain
+* Update the class name and function
+
+## Gulp
+Gulp is setup to run and each task has it's own file in the `gulp/tasks` directory.
+
+Run `gulp watch` to watch and process styles and scripts.

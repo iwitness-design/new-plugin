@@ -1,4 +1,5 @@
 {
+  "name": "new-plugin",
   "title": "New Plugin",
   "description": "New plugin description",
   "version": "1.0.0",
@@ -14,16 +15,15 @@
   "license": "GPLv2+",
   "private": true,
   "directories": {
-      "tests": "tests",
-      "js": "",
-      "sass": "",
-      "css": "",
-      "build": "./build",
-      "languages": "./languages"
+    "tests": "tests/",
+    "js": "assets/js/",
+    "sass": "assets/css/",
+    "css": "assets/css/",
+    "languages": "./languages"
   },
   "pot": {
     "type": "wp-plugin",
-    "textdomain": "newpugin",
+    "textdomain": "newplugin",
     "src": "newplugin.php",
     "header": {
       "bugs": "https://iwitnessdesign.com/contact/",
@@ -32,22 +32,35 @@
     }
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-checktextdomain": "~1.0.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-compress": "~0.8.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-exec": "~0.4.5",
-    "grunt-newer": "^1.1.0",
-    "grunt-phpcs": "^0.4.0",
-    "grunt-potomo": "~3.2.0",
-    "grunt-text-replace": "^0.4.0",
-    "grunt-wp-i18n": "~0.5.1",
-    "grunt-wp-readme-to-markdown": "^0.9.0",
-    "load-grunt-config": "0.16.0",
-    "load-grunt-tasks": "~0.3.0"
+    "autoprefixer": "^6.5.1",
+    "browserify": "^13.1.0",
+    "browserify-shim": "^3.8",
+    "del": "^2.2.2",
+    "glob": "^7.1.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-filter": "^4.0.0",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-glob": "^1.0.6",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.1.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "gulp-watch-sass": "^1.2.4",
+    "gulp-stylelint": "^5.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0",
+    "stylelint-config-wordpress": "^12.0.0"
   },
-  "main": "Gruntfile.js",
+  "main": "Gulpfile.js",
+  "stylelint": {
+    "extends": "stylelint-config-wordpress"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
