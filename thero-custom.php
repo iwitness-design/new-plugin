@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name: Plugin Name
+ * Plugin Name: Thero Custom Functionality
  * Plugin URL: http://iwitnessdesign.com
- * Description: The plugin description
+ * Description: Custom functionality for Thero
  * Version: 1.0.0
  * Author: iWitness Design
  * Author URI: https://iwitnessdesign.com
- * Text Domain: txt
+ * Text Domain: thero-custom
  * Domain Path: languages
  */
 
-class NewPlugin {
+class TheroCustom {
 
 	/**
 	 * @var
@@ -47,6 +47,8 @@ class NewPlugin {
 	 */
 	protected function includes() {
 		require_once( $this->get_plugin_dir() . 'vendor/autoload.php' );
+
+		TheroCustom\BuddyPress\Redirects::get_instance();
 	}
 
 	/**
@@ -64,6 +66,11 @@ class NewPlugin {
 	public function maybe_setup() {
 		if ( ! $this->check_required_plugins() ) {
 			return;
+		}
+
+		// register the activation time
+		if ( ! get_option( $this->get_id() . '_activated' ) ) {
+			update_option( $this->get_id() . '_activated', time() );
 		}
 
 		$this->includes();
@@ -126,6 +133,8 @@ class NewPlugin {
 	 */
 	protected function check_required_plugins() {
 
+		return true;
+
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		}
@@ -157,7 +166,7 @@ class NewPlugin {
 	 * @return string the plugin name
 	 */
 	public function get_plugin_name() {
-		return __( 'NewPlugin', $this->get_id() );
+		return __( 'Thero Custom Functionality', $this->get_id() );
 	}
 
 	/**
@@ -168,7 +177,7 @@ class NewPlugin {
 	 * @return string
 	 */
 	public function get_id() {
-		return 'newplugin';
+		return 'thero-custom';
 	}
 
 	/**
@@ -207,10 +216,10 @@ class NewPlugin {
 }
 
 /**
- * @return NewPlugin
+ * @return TheroCustom
  */
-function newplugin() {
-	return NewPlugin::get_instance();
+function therocustom() {
+	return TheroCustom::get_instance();
 }
 
-newplugin();
+therocustom();

@@ -1,13 +1,13 @@
 {
-  "name": "new-plugin",
-  "title": "New Plugin",
-  "description": "New plugin description",
+  "name": "thero-custom",
+  "title": "Thero Custom Functionality",
+  "description": "Custom functionality for Thero",
   "version": "1.0.0",
   "homepage": "https://iwitnessdesign.com/",
   "author": "iWitness Design <support@iwitnessdesign.com> (https://iwitnessdesign.com/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com:***.git"
+    "url": "https://github.com/TheroTech/TheroDirectory.git"
   },
   "bugs": {
     "url": "https://iwitnessdesign.com/contact/"
