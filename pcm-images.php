@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name: Thero Custom Functionality
+ * Plugin Name: PCM Images
  * Plugin URL: http://iwitnessdesign.com
- * Description: Custom functionality for Thero
+ * Description: Image gallery and importer functionality
  * Version: 1.0.0
  * Author: iWitness Design
  * Author URI: https://iwitnessdesign.com
- * Text Domain: thero-custom
+ * Text Domain: pcm-images
  * Domain Path: languages
  */
 
-class TheroCustom {
+class PCMImages {
 
 	/**
 	 * @var
@@ -48,7 +48,7 @@ class TheroCustom {
 	protected function includes() {
 		require_once( $this->get_plugin_dir() . 'vendor/autoload.php' );
 
-		TheroCustom\BuddyPress\Redirects::get_instance();
+		PCMImages\Importer::get_instance();
 	}
 
 	/**
@@ -166,7 +166,7 @@ class TheroCustom {
 	 * @return string the plugin name
 	 */
 	public function get_plugin_name() {
-		return __( 'Thero Custom Functionality', $this->get_id() );
+		return __( 'PCM Images', $this->get_id() );
 	}
 
 	/**
@@ -177,7 +177,7 @@ class TheroCustom {
 	 * @return string
 	 */
 	public function get_id() {
-		return 'thero-custom';
+		return 'pcm-images';
 	}
 
 	/**
@@ -216,10 +216,10 @@ class TheroCustom {
 }
 
 /**
- * @return TheroCustom
+ * @return PCMImages
  */
-function therocustom() {
-	return TheroCustom::get_instance();
+function pcmimages() {
+	return PCMImages::get_instance();
 }
 
-therocustom();
+pcmimages();
